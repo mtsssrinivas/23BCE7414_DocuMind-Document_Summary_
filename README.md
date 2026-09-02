@@ -232,20 +232,4 @@ python -m pytest -v tests/test_backend.py
 
 ---
 
-## 12. 200-Word Technical Assessment Write-Up
 
-> **DocuMind: Architectural Approach & Problem Solving**
-> 
-> DocuMind is architected around resilience, modularity, and rapid user feedback. The application handles document ingestion via a dual-tier pipeline: structured multi-page PDFs are parsed using `pypdf` with algorithmic word-fragmentation healing, while scanned documents utilize in-browser Tesseract.js accelerated OCR with server-side Pillow image binarization fallbacks.
-> 
-> For summarization, DocuMind implements a fail-safe dual-intelligence engine. When Google Gemini or OpenAI API keys are provided (via environment variables or the in-app settings modal), the system prompts LLMs with strict JSON schemas to generate structured summaries across three distinct depth targets (Short, Medium, Long), extract prioritized bullet points, categorize core concepts, and flag actionable improvement areas. If external APIs are unavailable or network conditions fail, the built-in deterministic extractive engine automatically takes over, utilizing TF-IDF term frequency weighting and sentence graph scoring to deliver 100% working results without failure.
-> 
-> Built on a decoupled React/TypeScript/Tailwind CSS frontend and a high-performance FastAPI backend, DocuMind features a clean minimalist interface, 4-stage processing visualizer, 1-click sample document test drive, full export capabilities (Markdown, Plain Text, Print PDF), and persistent local history.
-
----
-
-## 13. Future Improvements
-
-1. **Multilingual Support**: Language autodetection with multilingual OCR models for 50+ languages.
-2. **Document Q&A Chat**: Conversational sidecar to ask arbitrary questions on the uploaded document.
-3. **Multi-Document Comparison**: Side-by-side comparison of clauses and differences across documents.
